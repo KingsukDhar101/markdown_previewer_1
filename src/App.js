@@ -14,7 +14,7 @@ function App() {
       const scrollHeight = textAreaRef.current.scrollHeight;
       textAreaRef.current.style.height = scrollHeight + "px";
     }
-  }, [textAreaRef.current, text]);
+  }, [text]);
 
   marked.setOptions({
     breaks: true,
