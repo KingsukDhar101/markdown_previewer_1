@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+.App,
+.container {
+  /* border: 1px solid red; */
+  background-color: #87b5b5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.box {
+  border: 1px solid gray;
+  height: max-content;
+  min-height: 70vh;
+  width: 50%;
+  background-color: #ededed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#editor {
+  width: 100%;
+  height: max-content;
+  min-height: 100px;
+  padding: 15px;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  /* border-radius: 5px; */
+  border-color: #bfbfbf;
+  background-color: #c0d8d8;
+}
+#preview {
+  padding: 15px;
+}
+
+.editor_title,
+.previewer_title {
+  background: #4aa3a3;
+  font-size: 1.5rem;
+  padding: 5px 15px;
+  font-family: fantasy;
+}
+
+#editor::-webkit-scrollbar {
+  width: 0px;
+}
+
+#preview > p > code {
+  padding: 3px;
+}
+#preview code {
+  background: white;
+  font-size: 0.95rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+#preview pre {
+  display: block;
+  overflow: auto;
+  background-color: white;
+  padding: 5px;
+  line-height: 1.2;
+  /* box-shadow: -1px -0px 1px 1px #ccc, 1px 0px 1px 1px #ccc; */
+}
+#preview > pre > code > .token.comment {
+  color: #708090;
+}
+#preview > pre > code > .token.keyword {
+  color: #07a;
+}
+#preview > pre > code > .token.function {
+  color: #dd4a68;
+}
+#preview > pre > code > .token.punctuation {
+  color: #999;
+}
+#preview > pre > code > .token.parameter {
+}
+#preview > pre > code > .token.keyword {
+  color: #07a;
+}
+#preview > pre > code > .token.operator {
+  color: #9a6e3a;
+  background: hsla(0, 0%, 100%, 0.5);
+}
+#preview > pre > code > e .token.string {
+  color: #690;
+}
+
+#preview p {
+  margin: 20px 0;
+  line-height: 1.6em;
+}
+#preview h1 {
+  border-bottom: 2px solid #224b4b;
+  margin: 20px 0;
+}
+#preview h2 {
+  border-bottom: 1px solid #224b4b;
+  margin: 19px 0;
+}
+#preview h3 {
+  margin: 18px 0;
+}
+
+#preview blockquote {
+  border-left: 3px solid #224b4b;
+  color: #224b4b;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+
+#preview img {
+  display: block;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+#preview ul,
+#preview ol {
+  padding-inline-start: 25px;
+}
+
+#preview > ul,
+#preview > ol {
+  margin: 20px 0;
+}
+
+#preview table {
+  border-collapse: collapse;
+}
+#preview td,
+#preview th {
+  border: 2px solid #224b4b;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#preview th {
+  background-color: #b2d2df;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 5% 10%;
   }
-  to {
-    transform: rotate(360deg);
+  .box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .editor {
+    font-size: 14px;
+  }
+  .editor_title,
+  .previewer_title {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .container {
+    padding: 5%;
+    padding-top: 10%;
+  }
+  .editor {
+    font-size: 12px;
+  }
+  .editor_title,
+  .previewer_title {
+    font-size: 1rem;
   }
 }
